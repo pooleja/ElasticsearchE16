@@ -14,6 +14,13 @@ and return the records that match.
 
 ## Installation
 
+### Get Elasticsearch Docker Running
+```
+docker run -d -v /<data_path>/data/:/usr/share/elasticsearch/data elasticsearch -Des.node.name=Ubuntu1 -Des.cluster.name=SearchE16
+```
+Change <data_path> to a location on your machine, so that the data directory is on the local machine drive rather than inside the docker instance.  This will
+allow easier backup and restore capabilities later.  Also, change the node name and cluster name to a name of your choosing. 
+
 ### Run the setup script
 To get things up and running:
 ```
