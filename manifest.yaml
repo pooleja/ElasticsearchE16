@@ -12,7 +12,7 @@ info:
     name: eSixteen.co
     url: https://www.esixteen.co/apps/elastice16
   x-21-usage: 'Use the available API endpoints to index and search for your documents.'
-  x-21-quick-buy: "21 buy url http://[fcce:a977:eec7:c71c:1c43:0000:0000:0001]:11016/status"
+  x-21-quick-buy: "21 buy http://[fcce:a977:eec7:c71c:1c43:0000:0000:0001]:11016/status"
   x-21-category: utilities
   x-21-github-profile-url: https://github.com/pooleja
   x-21-keywords: [search, service, index, elastic, elasticsearch, iot, sensor]

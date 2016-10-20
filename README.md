@@ -43,7 +43,7 @@ The following shows how to set up and use an index against the service using the
 
 Create an index.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/indexes' --request POST
+$ 21 buy 'http://[::]:11016/indexes' --request POST
 {
     "expired": false,
     "indexExpireDisplay": "Tue Sep  6 18:04:49 2016",
@@ -56,7 +56,7 @@ See the 'indexId' that is returned.  This will be used on subsequent calls.
 
 Check index status.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff'
+$ 21 buy 'http://[::]:11016/tm8gnm6bshpujmeeejff'
 {
     "expired": false,
     "indexExpireDisplay": "Tue Sep  6 18:04:49 2016",
@@ -69,7 +69,7 @@ See that it is not yet expired and it shows you the expire date in the future.
 
 Renew for 30 extra days.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff' --request PUT
+$ 21 buy 'http://[::]:11016/tm8gnm6bshpujmeeejff' --request PUT
 {
     "expired": false,
     "indexExpireDisplay": "Thu Oct  6 18:04:49 2016",
@@ -82,7 +82,7 @@ See that the expire date went from Sept to Oct.
 
 Delete the index.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff' --request DELETE
+$ 21 buy 'http://[::]:11016/tm8gnm6bshpujmeeejff' --request DELETE
 {
     "indexId": "tm8gnm6bshpujmeeejff",
     "message": "Index tm8gnm6bshpujmeeejff deleted.",
@@ -92,7 +92,7 @@ $ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff' --request DELETE
 
 Verify it is deleted.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff'
+$ 21 buy 'http://[::]:11016/tm8gnm6bshpujmeeejff'
 {
     "error": "Index was previously deleted.",
     "success": false
@@ -101,7 +101,7 @@ $ 21 buy url 'http://0.0.0.0:11016/tm8gnm6bshpujmeeejff'
 
 Index a document on a different index.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/or48wn8hobbjkyu0j47r/tweet' -d '{ "user" : "kimchy", "post_date" : "2009-11-15T14:12:12", "message" : "trying out Elasticsearch"}' --request POST
+$ 21 buy 'http://[::]:11016/or48wn8hobbjkyu0j47r/tweet' -d '{ "user" : "kimchy", "post_date" : "2009-11-15T14:12:12", "message" : "trying out Elasticsearch"}' --request POST
 {
     "result": {
         "_index": "or48wn8hobbjkyu0j47r",
@@ -122,7 +122,7 @@ See that the document ID is returned.
 
 Search for that document.
 ```
-$ 21 buy url 'http://0.0.0.0:11016/or48wn8hobbjkyu0j47r/tweet/_search' -d '{"query" : { "term" : { "user" : "kimchy" } }}' --request POST
+$ 21 buy 'http://[::]:11016/or48wn8hobbjkyu0j47r/tweet/_search' -d '{"query" : { "term" : { "user" : "kimchy" } }}' --request POST
 {
     "result": {
         "_shards": {
