@@ -31,7 +31,7 @@ $ ./setup.sh
 
 Next, start up the server:
 ```
-$ python3 transcodeE16-server.py -d
+$ python3 elasticsearchE16-server.py -d
 Connecting to DB.
 Checking to see if any files need to be cleaned up in 'server-data' folder.
 Sleeping for an hour befor cleaning up folder again.
