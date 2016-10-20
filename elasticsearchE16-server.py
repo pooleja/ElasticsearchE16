@@ -41,14 +41,6 @@ sql = IndexesSQL()
 es = ElasticsearchE16(ES_HOSTS)
 
 
-@app.route('/manifest')
-def manifest():
-    """Provide the app manifest to the 21 crawler."""
-    with open('./manifest.yaml', 'r') as f:
-        manifest = yaml.load(f)
-    return json.dumps(manifest)
-
-
 @app.route('/indexes', methods=['POST'])
 @payment.required(10000)
 def index_create():
@@ -333,6 +325,6 @@ if __name__ == '__main__':
         else:
 
             logger.info("Server running...")
-            app.run(host='0.0.0.0', port=11016)
+            app.run(host='::', port=11016)
 
     run()
