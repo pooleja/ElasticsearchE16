@@ -20,7 +20,7 @@ info:
   x-21-total-price:
      min: 10
      max: 10000
-host: [fcce:a977:eec7:c71c:1c43:0000:0000:0001]:11016
+host: '[fcce:a977:eec7:c71c:1c43:0000:0000:0001]:11016'
 schemes:
    - http
 basePath: /
